@@ -48,7 +48,7 @@ export default function Dogs(){
 
             <p> Consulte e encontre fotos de cachorros </p>
             <div className="layout-central">
-                <div class="layout-menu">
+                <div className="layout-menu">
                     <ul>
                     <li key="todas-racas" onClick={() => BuscarImagem()}>
                             Todas as Raças
@@ -71,7 +71,7 @@ export default function Dogs(){
                     
                         
                         {racasimg.map((imagem, index) => {
-                            return <img key={index} src={imagem} alt={"Imagem " + index} />;
+                            return <img key={index} src={imagem} alt={`Imagem ${index}`} />;
                         })}
                 </div>
             </div>
