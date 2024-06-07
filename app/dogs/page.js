@@ -50,15 +50,16 @@ export default function Dogs(){
             <div className="layout-central">
                 <div class="layout-menu">
                     <ul>
-                        <li onClick={() => BuscarImagem()}>Todas as Raças</li>
-                    
-                   
-                        {
-                            racas.map( r=> {
-                                return <li onClick={ ()=>BuscarImagem(r)}> {r} </li>
-                            })
-                            
-                        } 
+                    <li key="todas-racas" onClick={() => BuscarImagem()}>
+                            Todas as Raças
+                        </li>
+                        {racas.map((raca, index) => {
+                            return (
+                                <li key={index} onClick={() => BuscarImagem(raca)}>
+                                    {raca}
+                                </li>
+                            );
+                        })}
                     </ul>
                 </div>
                 {/*Painel de foto dos cachorros*/}
@@ -67,16 +68,11 @@ export default function Dogs(){
                 
                     <h2>{nome}</h2>
                     <ul/>
-                    {
+                    
                         
-                            racasimg.map(i =>{
-                                return(<img src={i}/>)
-                            })
-                            
-                    } 
-                        
-                   
-                
+                        {racasimg.map((imagem, index) => {
+                            return <img key={index} src={imagem} alt={"Imagem " + index} />;
+                        })}
                 </div>
             </div>
 
