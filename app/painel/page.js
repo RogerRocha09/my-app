@@ -56,34 +56,29 @@ export default function Painel(){
             <hr/>
             <h2>Lista de Usuario:</h2>
             <ul>
-                {
-                    usuarios.map( u=> {
-                        return <li> Nome:{u.nome}, idade: {u.idade} anos</li>
-                    })
-                }
+            {usuarios.map(u => (
+                    <li key={u.id}>
+                        Nome: {u.nome}, idade: {u.idade} anos
+                    </li>
+                ))}
             </ul>
 
             
             <hr/>
             <h2>Lista de Produtos:</h2>
             <ul>
-                {
-                    produtos.map( p => {
-                        return <li>
+            {produtos.map(p => (
+                    <li key={p.id}>
                         <p>{p.produto}</p>
                         <p>R${p.preco}</p>
-                        
-                        {
-                            p.estoque > 0?
-                                <p> {p.estoque} disponiveis - <button>Comprar</button></p> 
-                        :
+                        {p.estoque > 0 ?
+                            <p>{p.estoque} disponíveis - <button>Comprar</button></p>
+                            :
                             <p>Produto fora de estoque</p>
-                                
-                        }  
-                        <hr></hr>
-                        </li>
-                    })
-                }
+                        }
+                        <hr/>
+                    </li>
+                ))}
             </ul>
         </div>
 
